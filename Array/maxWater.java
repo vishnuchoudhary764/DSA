@@ -1,17 +1,14 @@
 
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-
 public class maxWater {
 
     static int CalculateArea(int arr[]) {
         int left = 0, right = arr.length-1, maxWater = 0;
         while (left < right) {
             int width = right - left;
-            int height = min(arr[left], arr[right]);
+            int height = Math.min(arr[left], arr[right]);
             int currentArea = width * height;
 
-            maxWater =  max(currentArea, maxWater);
+            maxWater =  Math.max(currentArea, maxWater);
             if (arr[left] < arr[right]) {
                 left++;
             } else {
