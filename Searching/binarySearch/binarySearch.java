@@ -1,6 +1,6 @@
-public class binaryCeilingNum {
+public class binarySearch {
 
-    static int findCeilingNum(int arr[],int target){
+    static int search(int arr[],int target){
         int start = 0;
         int end = arr.length-1;
         while(start<=end){
@@ -12,15 +12,15 @@ public class binaryCeilingNum {
                 start = mid+1;
             }
             else{
-                 return arr[mid];
+                 return mid;
             }
         }
-        return arr[start];
+        return -1;
     }
     public static void main(String[] args) {
     int arr[] = {2,3,5,9};
-    int target = 8;
-    int ans = findCeilingNum(arr, target);
-    System.out.println(ans);
+    int target = 3;
+    int ans = search(arr, target);
+    System.out.println("target found at index : "+ans);
     }
 }
